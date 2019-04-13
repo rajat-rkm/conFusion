@@ -1,0 +1,19 @@
+<div class="container"
+   fxLayout="column"
+   fxLayoutGap="10px">
+
+   <!--mat-list work as ul tag-->
+   <mat-list fxFlex>
+   
+    <!--work as li *ngfor is used to iterate through the aaray created earlier in menu.component.ts-->
+    <mat-list-item *ngFor="let dish of dishes">
+
+      <!--dish.image because we already have a variable image in dish class-->
+      <img matListAvatar src={{dish.image}} alt={{dish.name}}>
+      <h1 matLine>{{dish.name}}</h1>
+      <p matLine>
+        <span> {{dish.description}} </span>
+      </p>
+    </mat-list-item>
+   </mat-list>
+  </div>
