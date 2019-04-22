@@ -14,4 +14,16 @@ export class DishService {
   getDishes(): Dish[] {
     return DISHES
   }
+
+  //for a specific dish
+  getDish(id: string): Dish
+  {
+    //ek particular dish ko pick krega id k basis pr usko ek aaray mai place krega uss aaray se fer extract krega (that's why [0])
+    return DISHES.filter((dish) => (dish.id=== id))[0];
+  }
+
+  getFeaturedDish(): Dish
+  {
+    return DISHES.filter((dish) =>dish.featured)[0];
+  }
 }
