@@ -35,7 +35,7 @@ export class MenuComponent implements OnInit {
     //dishes variable mai dishservice jo dish le rha hai getdishes method se woh assign ho rhi hai
    // this.dishes =this.dishService.getDishes(); used when service is  used
    this.dishService.getDishes()
-     .then((dishes)=>this.dishes = dishes); 
+     .subscribe((dishes)=>this.dishes = dishes); 
   }
 
   onSelect(dish:Dish)
