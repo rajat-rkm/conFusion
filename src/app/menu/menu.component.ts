@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject } from '@angular/core';
 
 //jo class bnayi usko yaha import kiya
 import { Dish } from '../shared/dish';
@@ -24,11 +24,9 @@ export class MenuComponent implements OnInit {
   //for services this show that dishes is a variable that is of Dish array type
   dishes: Dish[];
 
-  selectedDish:Dish;
-
-
   //created a variable of dishservice type 
-  constructor(private dishService: DishService) { }
+  constructor(private dishService: DishService, 
+    @Inject('BaseURL') private BaseURL) { }
 
   ngOnInit() {
 
@@ -38,8 +36,4 @@ export class MenuComponent implements OnInit {
      .subscribe((dishes)=>this.dishes = dishes); 
   }
 
-  onSelect(dish:Dish)
-  {
-    this.selectedDish = dish;
-  }
 }

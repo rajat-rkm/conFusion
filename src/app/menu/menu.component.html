@@ -18,7 +18,7 @@
       <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail',dish.id]">     <!--(click)="onSelect(dish)"-->
   
         <!--dish.image because we already have a variable image in dish class-->
-        <img height="200px" src={{dish.image}} alt={{dish.name}}>
+        <img height="200px" src="{{BaseURL + dish.image}}" alt={{dish.name}}>
         <mat-grid-tile-footer>
           <!--pipe will convert name to upper case-->
             <h1>{{dish.name | uppercase}}</h1>
