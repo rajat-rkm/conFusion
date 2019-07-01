@@ -15,7 +15,7 @@
    <mat-grid-list cols="2" rowHeight="200px">
    
       <!--work as li *ngfor is used to iterate through the aaray created earlier in menu.component.ts-->
-      <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail',dish.id]">     <!--(click)="onSelect(dish)"-->
+      <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail',dish.id]" appHighlight>     <!--(click)="onSelect(dish)"-->
   
         <!--dish.image because we already have a variable image in dish class-->
         <img height="200px" src="{{BaseURL + dish.image}}" alt={{dish.name}}>
