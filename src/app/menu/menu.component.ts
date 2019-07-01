@@ -1,4 +1,4 @@
-import { Component, OnInit,Inject } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
 //jo class bnayi usko yaha import kiya
 import { Dish } from '../shared/dish';
@@ -23,6 +23,8 @@ export class MenuComponent implements OnInit {
 
   //for services this show that dishes is a variable that is of Dish array type
   dishes: Dish[];
+  errMess: string;
+
 
   //created a variable of dishservice type 
   constructor(private dishService: DishService, 
@@ -33,7 +35,8 @@ export class MenuComponent implements OnInit {
     //dishes variable mai dishservice jo dish le rha hai getdishes method se woh assign ho rhi hai
    // this.dishes =this.dishService.getDishes(); used when service is  used
    this.dishService.getDishes()
-     .subscribe((dishes)=>this.dishes = dishes); 
+     .subscribe((dishes)=>this.dishes = dishes,
+     errmess => this.errMess = <any>errmess); 
   }
 
 }
